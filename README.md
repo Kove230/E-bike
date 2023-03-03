@@ -2,11 +2,11 @@
 An e-bike made completely from scratch using off the shelf parts
 
 
-# Tools, Parts, Design, and Skills
+## Tools, Parts, Design, and Skills
 
 The core pieces of this project are the 750 Watt off the shelf 3 phase tesla motor generally used to power electric scooters and go-karts and the hall sensor that takes data from a magnet mounted to the rim of the wheel, feeding to a homemade speedometer that cuts power to the motor after 20 MPH, which is required to keep the bike street legal.
 
-# Hardware
+## Hardware
 
 The main hardware challenges inherent in a completely DIY e-bike are building sufficiently sturdy mounts for the motor and controller, and the electrical system. 
 
@@ -14,7 +14,7 @@ One of the primary motivations for pursuing this project was a lack of sufficien
 
 There is a system of 4 relays with their outputs shorting the off switch on the motor controller which provide motor control, 2 relays are dedicated to redundant speed controls limiting the bike to 20 MPH, a third sets the bike to "demo mode" further limiting the top speed to 15 MPH. This was included in anticipation of people wanting to ride the bike, but also functions as a low power mode. The last relay is currently detached, reserved for a possible lock upgrade in the future.
 
-# Software
+## Software
 
 Below is the code I wrote to run the speedometer that keeps the e-bike street legal. In addition to a speedometer, the display and code 
 output an odometer, trip timer, and real time clock. It runs on an esp32 platform to allow for NTP updates of the real time clock as well as OTA updates.
