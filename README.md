@@ -50,7 +50,7 @@ int ot = 0;
 int nt = 0;
 int pst = 16;       //timezone offset for RTC, daylight savings makes this a mess
 
-WiFiUDP ntpUDP; // include WiFi
+WiFiUDP ntpUDP; 
 NTPClient timeClient(ntpUDP); //include NTP for real time clock
 LiquidCrystal_I2C lcd(0x27,16,2);  // sets the LCD address to 0x27 for a 16 chars and 2 line display
 
