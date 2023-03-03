@@ -19,7 +19,7 @@ The motor was mounted similarly to the electrical box, it is slung underneath th
 ## Software
 
 Below is the code I wrote to run the speedometer that keeps the e-bike street legal. In addition to a speedometer, the display and code 
-output an odometer, trip timer, and real time clock. It runs on an esp32 platform to allow for NTP updates of the real time clock as well as OTA updates.
+output an odometer, trip timer, and real time clock which automatically updates when powered on. It runs on an esp32 platform to allow for NTP updates of the real time clock as well as OTA updates.
 
 ```
 #include <ArduinoOTA.h>
