@@ -1,31 +1,18 @@
 # E-bike
 An e-bike made completely from scratch using off the shelf parts
 
-# Table of Contents
-Tools, Parts, and Skills
-
-Planning and validation
-
-Hardware
-
-Software
-
-Assembley
-
-Results
-
 
 # Tools, Parts, Design, and Skills
 
-The core pieces of this project are the 750 Watt off the shelf 3 phase tesla motor generally used to power electric scooters and go-karts and the hall sensor that takes data from a magnet mounted to the rim of the wheel, feeding to a homemade speedometer that cuts power to the motror after 20 MPH, which is required to keep the bike street legal.
+The core pieces of this project are the 750 Watt off the shelf 3 phase tesla motor generally used to power electric scooters and go-karts and the hall sensor that takes data from a magnet mounted to the rim of the wheel, feeding to a homemade speedometer that cuts power to the motor after 20 MPH, which is required to keep the bike street legal.
 
 # Hardware
 
-The main hardware challenges inherent in a completely DIY e-bike are building sufficiently sturdy mounts for the motor and controller, and the electrcal system. 
+The main hardware challenges inherent in a completely DIY e-bike are building sufficiently sturdy mounts for the motor and controller, and the electrical system. 
 
-One of the primary motivaions for pursuing this project was a lack of sufficent repairability and features in similar retail bikes available, which necessitated 12V power for automotive accessories such as turn signals and a headlight. This posed some challenges since it required splicing into the 48V battery and converting power down to 12V. In order to acheive this in a "weather-resistant" way I housed the whole eletrical system in a waterproof project box that was then bolted to the bike's frame. Durng testing, voltage ripple accross the 12V line was an issue for the esp32 based speedometer, but a 1MF capacitor smoothed the ripple enough that it became indescernable. 
+One of the primary motivations for pursuing this project was a lack of sufficient repairability and features in similar retail bikes available, which necessitated 12V power for automotive accessories such as turn signals and a headlight. This posed some challenges since it required splicing into the 48V battery and converting power down to 12V. In order to achieve this in a "weather-resistant" way, I housed the whole electrical system in a waterproof project box that was then bolted to the bike's frame. During testing, voltage ripple across the 12V line was an issue for the esp32 based speedometer, but a 1MF capacitor smoothed the ripple enough that it became indiscernible. 
 
-There is a system of 4 relays with their outputs shorting the off switch on the motor controller which provide controlls, 2 relays are dedicated to redundant speed controls limiting the bike to 20 MPH, a third sets the bike to "demo mode" further limiting the top speed to 15 MPH. This was included in anticipation of poeple wanting to ride the bike, but also functions as a low power mode. The last relay is currntly detached, reserved for a possible lock upgrade in th future.
+There is a system of 4 relays with their outputs shorting the off switch on the motor controller which provide motor control, 2 relays are dedicated to redundant speed controls limiting the bike to 20 MPH, a third sets the bike to "demo mode" further limiting the top speed to 15 MPH. This was included in anticipation of people wanting to ride the bike, but also functions as a low power mode. The last relay is currently detached, reserved for a possible lock upgrade in the future.
 
 # Software
 
@@ -35,7 +22,7 @@ output an odometer, trip timer, and real time clock. It runs on an esp32 platfor
 ```
 #include <ArduinoOTA.h>
 #include <TimeLib.h>
-#include <LiquidCrystal_I2C.h>  //this library always triggers a warning for esp32 during compile, but works without any discernable flaws
+#include <LiquidCrystal_I2C.h>  //this library always triggers a warning for esp32 during compile, but works without any discernible flaws
 #include <NTPClient.h>
 #include <Ds1302.h>
 #include <time.h>
@@ -53,7 +40,7 @@ unsigned long currenttime=millis();         //used for clock
 unsigned long startrev=1;                   //used to calculate speed
 unsigned long endrev=0;                     //used to calculate speed
 unsigned long revtime=0;                    //used to calculate speed
-int circMetric=4641; // wheel circumference, in ridiculous units to output miles/hour but inttake milliseconds to cut down on calcuations
+int circMetric=4641; // wheel circumference, in ridiculous units to output miles/hour but intake milliseconds to cut down on calculations
 float speedm=0;    // holds current speed in M/S (converted to MPH at the end for readability on the road)
 int odometer=0;    //holds current odometer reading in miles
 float t=1;
@@ -69,15 +56,15 @@ LiquidCrystal_I2C lcd(0x27,16,2);  // sets the LCD address to 0x27 for a 16 char
 
 Ds1302 rtc(14,27,16); //(PIN_ENA, PIN_CLK, PIN_DAT)     //set up RTC
 
-void IRAM_ATTR isr() { //interupt each time the magnet on the bike's wheel passes the hall sensor on the fork, 
+void IRAM_ATTR isr() { //interrupt each time the magnet on the bike's wheel passes the hall sensor on the fork, 
                        //setting rev=1 functions as a debouncer, ensuring that multiple short contacts within a short time only count as one wheel revolution, 
                        //rev is set equal to 0 in the main loop
   if (rev==0){
   rev=1;
  endrev=startrev;
- startrev=millis(); //the interupt debounces the input from the happ sensor, then stores the current and most recent wheel revolution times in system time, 
+ startrev=millis(); //the interrupt debounces the input from the hall sensor, then stores the current and most recent wheel revolution times in system time, 
                     //discarding what is now the third most recent time as it is no longer relevant. 
-                    //This is important for speed calculautions which are executed in the main loop to save computational resources
+                    //This is important for speed calculations which are executed in the main loop to save computational resources
   }
 }
 
@@ -85,7 +72,7 @@ void setup()
 {
 lcd.init();            //initiate the LCD display
 lcd.backlight();       //turn on the backlight
-rtc.init();            //initiaite real time clock
+rtc.init();            //initiate real time clock
 WiFi.mode(WIFI_STA);
 WiFi.begin(ssid, password);
 timeClient.begin();
@@ -94,10 +81,10 @@ pinMode(26,INPUT_PULLUP); //set pin 26 as an output, pin 26 connects to the hall
 pinMode(25,OUTPUT);       //sets pin 25 as an output, used for speed limiting
 digitalWrite(25,LOW);     //set the speed control to off
 pinMode(17,OUTPUT);       //second speed control with alternate limit for "demo mode"
-digitalWrite(17,LOW);     //set speed cntrol to off
+digitalWrite(17,LOW);     //set speed control to off
 attachInterrupt(digitalPinToInterrupt(26),isr,RISING);    //sets pin 26 as an interrupt
 
-ArduinoOTA    //sets up OTA updating as long as the code takes up less than 50% of system memory, huge quality of life update to be able to update an embeded device over WiFi
+ArduinoOTA    //sets up OTA updating as long as the code takes up less than 50% of system memory, huge quality of life upgrade to be able to update an embedded device over WiFi
     .onStart([]() {
       String type;
       if (ArduinoOTA.getCommand() == U_FLASH)
@@ -108,7 +95,7 @@ ArduinoOTA    //sets up OTA updating as long as the code takes up less than 50% 
   ot=millis();
   
         while (WiFi.status() != WL_CONNECTED && millis()<7000) {    //crude loading screen while the system waits for WiFi connection. 
-                                                                    //The delay is unnoticable in use due to the delay from connecting the battery to starting the bike
+                                                                    //The delay is unnoticeable in use due to the delay from connecting the battery to starting the bike
 
 nt=millis();
 
@@ -197,11 +184,11 @@ if (speedm<15){
     rtc.getDateTime(&now);  
 
     static uint8_t last_second = 0;
-    if (last_second != now.second)//limiting display refreshes to 1 HZ to conserve computational resources, refresh apparently takes 250 mS
+    if (last_second != now.second)//limiting display refreshes to 1 HZ to conserve computational resources, refresh takes 250 milliseconds
     {
         last_second = now.second;
 
-      lcd.clear(); //updating the speedomeer and odometer display
+      lcd.clear(); //updating the speedometer and odometer display
         lcd.setCursor(0,0);
   lcd.print(int(speedm));
   lcd.print(" MPH");
