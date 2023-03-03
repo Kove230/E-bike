@@ -10,7 +10,7 @@ In completing this project, I utilized my existing soldering as well as analog c
 
 ## Hardware
 
-The main hardware challenges inherent in a completely DIY e-bike are building sufficiently sturdy mounts for the motor and controller, and the electrical system. 
+The main hardware challenges inherent in a completely DIY e-bike are building sufficiently sturdy mounts for the motor and electrical system. 
 
 One of the primary motivations for pursuing this project was a lack of sufficient repairability and features in similar retail bikes available, which necessitated 12V power for automotive accessories such as turn signals and a headlight. This posed some challenges since it required splicing into the 48V battery and converting power down to 12V. In order to achieve this in a "weather-resistant" way, I housed the whole electrical system in a waterproof project box that was then bolted to the bike's frame with two U bolts. During testing, voltage ripple across the 12V line due to the 3 phase power draw for the motor was an issue for the esp32 based speedometer, but a 1MF capacitor smoothed the ripple enough that it became indiscernible. 
 
