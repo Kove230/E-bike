@@ -31,15 +31,24 @@ There is a system of 4 relays with their outputs shorting the off switch on the 
 
 
 <picture>
- <source media="(prefers-color-scheme: dark)" srcset="https://github.com/Kove230/E-bike/blob/main/20230304_123612.jpg">
- <source media="(prefers-color-scheme: light)" srcset="https://github.com/Kove230/E-bike/blob/main/20230304_123612.jpg">
- <img alt="YOUR-ALT-TEXT" src="https://github.com/Kove230/E-bike/blob/main/20230304_123612.jpg">
+ <source media="(prefers-color-scheme: dark)" srcset="https://github.com/Kove230/E-bike/blob/main/20230302_164749.jpg">
+ <source media="(prefers-color-scheme: light)" srcset="https://github.com/Kove230/E-bike/blob/main/20230302_164749.jpg">
+ <img alt="YOUR-ALT-TEXT" src="https://github.com/Kove230/E-bike/blob/main/20230302_164749.jpg">
 </picture>
 
 
 
 
 The motor was mounted similarly to the electrical box, it is slung underneath the bike's frame just behind the front wheel. I was very concerned about the motor wandering down the frame, resulting in slack in the chain, which I learned during testing resulted in the chain being thrown off of the motor's sprocket. To preemptively solve this wandering motor problem, I drilled two holes in the bottom of the bike frame and installed M4 threaded inserts, which align with holes drilled in the plates securing the U bolts. Threading an M4 bolt through the hole in the plate keeps the mount from wandering, and the motor covers the bolts, eliminating any possibility of them coming loose before the motor does.
+
+
+
+<picture>
+ <source media="(prefers-color-scheme: dark)" srcset="https://github.com/Kove230/E-bike/blob/main/20230304_123612.jpg">
+ <source media="(prefers-color-scheme: light)" srcset="https://github.com/Kove230/E-bike/blob/main/20230304_123612.jpg">
+ <img alt="YOUR-ALT-TEXT" src="https://github.com/Kove230/E-bike/blob/main/20230304_123612.jpg">
+</picture>
+
 
 ## Software
 
