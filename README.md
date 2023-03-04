@@ -47,11 +47,8 @@ unsigned long revtime=0;                    //used to calculate speed
 int circMetric=4641; // wheel circumference, in ridiculous units to output miles/hour but intake milliseconds to cut down on calculations
 float speedm=0;    // holds current speed in M/S (converted to MPH at the end for readability on the road)
 int odometer=0;    //holds current odometer reading in miles
-float t=1;
 int rev = 0;
 float thour=0;
-int ot = 0;
-int nt = 0;
 int pst = 16;       //timezone offset for RTC, daylight savings makes this a mess
 
 WiFiUDP ntpUDP; 
