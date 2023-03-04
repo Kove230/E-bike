@@ -8,6 +8,15 @@ The core pieces of this project are the 750 Watt off the shelf 3 phase tesla mot
 
 In completing this project, I utilized my existing soldering as well as analog circuit design and prototyping skills. Throughout the project, I learned to use Arduino's version of C++ and gained a thorough understanding of every piece of my bike and how to repair them. I sketched out a rough plan for the bike (below) but serious modifications needed to be made to that plan as clearance constraints were more of a factor than I had anticipated. I wanted every piece of the bike to be operating below spec, leading to the aggressive modification of the original mountain bike to a cruiser style riding posture while retaining all the strength and superior front suspension of the original mountain bike.
 
+
+
+<picture>
+ <source media="(https://imgur.com/gallery/5t8XX2S)" srcset="(https://imgur.com/gallery/5t8XX2S)">
+ <source media="(https://imgur.com/gallery/5t8XX2S)" srcset="(https://imgur.com/gallery/5t8XX2S)">
+ <img alt="(https://imgur.com/gallery/5t8XX2S)" src="(https://imgur.com/gallery/5t8XX2S)">
+</picture>
+
+
 ## Hardware
 
 The main hardware challenges inherent in a completely DIY e-bike are building sufficiently sturdy mounts for the motor and electrical system, along with the execution of the electrical system. 
