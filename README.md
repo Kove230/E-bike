@@ -43,12 +43,6 @@ The motor was mounted similarly to the electrical box, it is slung underneath th
 
 
 
-<picture>
- <source media="(prefers-color-scheme: dark)" srcset="https://github.com/Kove230/E-bike/blob/main/20230304_123612.jpg">
- <source media="(prefers-color-scheme: light)" srcset="https://github.com/Kove230/E-bike/blob/main/20230304_123612.jpg">
- <img alt="YOUR-ALT-TEXT" src="https://github.com/Kove230/E-bike/blob/main/20230304_123612.jpg">
-</picture>
-
 
 ## Software
 
