@@ -48,6 +48,8 @@ int circMetric=4641; // wheel circumference, in ridiculous units to output miles
 float speedm=0;    // holds current speed in M/S (converted to MPH at the end for readability on the road)
 int odometer=0;    //holds current odometer reading in miles
 int rev = 0;
+int ot = 0;
+int nt = 0;
 float thour=0;
 int pst = 16;       //timezone offset for RTC, daylight savings makes this a mess
 
