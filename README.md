@@ -11,9 +11,9 @@ In completing this project, I utilized my existing soldering as well as analog c
 
 
 <picture>
- <source media="(prefers-color-scheme: dark)" srcset="https://github.com/Kove230/E-bike/blob/main/Photo%20note.jpeg">
- <source media="(prefers-color-scheme: light)" srcset="https://github.com/Kove230/E-bike/blob/main/Photo%20note.jpeg">
- <img alt="YOUR-ALT-TEXT" src="https://github.com/Kove230/E-bike/blob/main/Photo%20note.jpeg">
+ <source media="(prefers-color-scheme: dark)" srcset="https://github.com/Kove230/E-bike/blob/main/unnamed.png">
+ <source media="(prefers-color-scheme: light)" srcset="https://github.com/Kove230/E-bike/blob/main/unnamed.png">
+ <img alt="YOUR-ALT-TEXT" src="https://github.com/Kove230/E-bike/blob/main/unnamed.png">
 </picture>
 
 
