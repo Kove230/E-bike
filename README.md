@@ -11,10 +11,13 @@ In completing this project, I utilized my existing soldering as well as analog c
 
 
 <picture>
- <source media="(https://imgur.com/gallery/5t8XX2S)" srcset="(https://imgur.com/gallery/5t8XX2S)">
- <source media="(https://imgur.com/gallery/5t8XX2S)" srcset="(https://imgur.com/gallery/5t8XX2S)">
- <img alt="(https://imgur.com/gallery/5t8XX2S)" src="(https://imgur.com/gallery/5t8XX2S)">
+ <source media="(prefers-color-scheme: dark)" srcset="https://imgur.com/gallery/5t8XX2S">
+ <source media="(prefers-color-scheme: light)" srcset="https://imgur.com/gallery/5t8XX2S">
+ <img alt="YOUR-ALT-TEXT" src="https://imgur.com/gallery/5t8XX2S">
 </picture>
+
+
+
 
 
 ## Hardware
