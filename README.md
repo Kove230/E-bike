@@ -80,7 +80,7 @@ WiFi.mode(WIFI_STA);
 WiFi.begin(ssid, password);
 timeClient.begin();
 timeClient.update();
-pinMode(26,INPUT_PULLUP); //set pin 26 as an output, pin 26 connects to the hall sensor
+pinMode(26,INPUT_PULLUP); //set pin 26 as an input, pin 26 connects to the hall sensor
 pinMode(25,OUTPUT);       //sets pin 25 as an output, used for speed limiting
 digitalWrite(25,LOW);     //set the speed control to off
 pinMode(17,OUTPUT);       //second speed control with alternate limit for "demo mode"
